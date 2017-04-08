@@ -15,11 +15,18 @@
           left:5%;
           top: 10%;
       }
-    .element
-    background-color: none;
-    border: none;
-    cursor: pointer;
-}
+      .item{
+      background-color: none;
+      border: none;
+      cursor: pointer;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: none;
+        min-width: 160px;
+        z-index: 1;
+       }
   </style>
   <meta charset="utf-8" />
   <title>DigitaL World</title>
@@ -27,10 +34,15 @@
  <body>
  
   <div id = "code">
-   <div class =  "element" id = "setup">[setup/]</div>
-   <div class =  "element" id = "engine">[engine/]</div>
-   <div class =  "element" id = "library">[library/]</div>
-   <div class =  "element" id = "script">[run.script/]</div>   
+   <button onclick="myFunction('setup-content')" class =  "item" id = "setup-btn">[setup/]</button>
+   <div class="item-content" id="setup-content">
+    
+    </div>
+   <button class =  "item" id = "engine-btn">[engine/]</button>
+    <div class="item-content" id="engine-content">
+    </div>
+   <button class =  "item" id = "library-btn">[library/]</button>
+   <buttton class =  "item" id = "script-btn">[run.script/]</buttton>   
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type ="text/javascript" src="https://rawgit.com/Generatoror/WebSite-Test/master/script.js">
