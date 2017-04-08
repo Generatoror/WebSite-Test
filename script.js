@@ -1,9 +1,18 @@
-        var libButton = document.getElementById('lib-button');
-        var libIt = function() {
-            var storyDiv = document.getElementById("story");
-            var noun = document.getElementById("noun").value;
-             var adjective = document.getElementById("adjective").value;
-              var name = document.getElementById("person").value;
-            storyDiv.innerHTML = "A " + adjective + " " + noun + " called " + name;
-        };
-        libButton.addEventListener('click', libIt);
+function myFunction(id) {
+    document.getElementById(id).classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var items = document.getElementsByClassName("item-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
