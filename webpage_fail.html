@@ -16,19 +16,21 @@
           top: 10%;
       }
       .item{
-      background-color:RGB(0,10,5); ;
+      background-color: RGB(0,10,5); 
       border: none;
       cursor: pointer;
       font-family:monospace;
       color: RGB(0,200,0);
+      display:block;
       }
-      .dropdown-content {
+      .item-content {
         display: none;
-        position: absolute;
-        background-color: none;
+        position: relative;
         min-width: 160px;
         z-index: 1;
+        background-color: "blue";
        }
+      .dropdown button {display:block;}
       .show {display:block;}
   </style>
   <meta charset="utf-8" />
@@ -47,15 +49,17 @@
    <button class =  "item" id = "library-btn">[library/]</button>
       <div class="item-content" id="library-content">
       </div>
-   <buttton class =  "item" id = "script-btn">[run.script/]</buttton>
+   <button class =  "item" id = "script-btn">[run.script/]</button>
       <div class="item-content" id="script-content">
       </div>
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type ="text/javascript" src="https://rawgit.com/Generatoror/WebSite-Test/master/script.js">
+    
+    
 
-     
-        
+    <script>function myFunction(id) {
+    document.getElementById(id).classList.toggle("show");
+}
     </script>
   
  </body>
