@@ -23,12 +23,13 @@
       color: RGB(0,200,0);
       display:block;
       }
+      .item:hover{color:RGB(2,20,10)}
       .item-content {
         display: none;
         position: relative;
         min-width: 160px;
         z-index: 1;
-        background-color: "blue";
+        
        }
       .dropdown button {display:block;}
       .show {display:block;}
@@ -43,13 +44,13 @@
       <div class="item-content" id="setup-content">
       <button  class =  "item" id = "hello">Hello</button>
       </div>
-   <button class =  "item" id = "engine-btn">[engine/]</button>
+   <button onclick="myFunction('engine-content')" class =  "item" id = "engine-btn">[engine/]</button>
       <div class="item-content" id="engine-content">
       </div>
-   <button class =  "item" id = "library-btn">[library/]</button>
+   <button onclick="myFunction('library-content')" class =  "item" id = "library-btn">[library/]</button>
       <div class="item-content" id="library-content">
       </div>
-   <button class =  "item" id = "script-btn">[run.script/]</button>
+   <button onclick="myFunction('script-content')" class =  "item" id = "script-btn">[run.script/]</button>
       <div class="item-content" id="script-content">
       </div>
   </div>
