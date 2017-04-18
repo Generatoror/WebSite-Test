@@ -37,7 +37,7 @@
           color: RGB(0,200,0);
           display:block;
       }
-      .item:hover{color:RGB(10,150,10)}
+      .item:hover{color:RGB(10,150,10);}
       .item-content {
         display: none;
         position: relative;
@@ -47,7 +47,8 @@
        }
       
       .show {display:block;}
-      .virus{color: "red"}
+      .virus{color: RGB(200,0,0);}
+      .virus:hover{color: RGB(150,10,10)}
   </style>
   <meta charset="utf-8" />
   <title>DigitaL World</title>
@@ -92,6 +93,7 @@ function trojanWorm(id) {
     var virusEl = document.getElementById(id);
     
     document.getElementById(id).classList.add("virus");
+    document.getElementById(id).classList.remove("item");
     document.getElementById(id).innerHTML = "WORM";
 }
      
