@@ -47,6 +47,7 @@
        }
       
       .show {display:block;}
+      .virus{color: "red"}
   </style>
   <meta charset="utf-8" />
   <title>DigitaL World</title>
@@ -74,13 +75,24 @@
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <div id = statBox>
+   <p id = cryptography>cryptography: value</p>
+   <p id = security>security: value</p>
+   <p id = debugging>debugging: value</p>
   </div>
     
     
 
-    <script>function myFunction(id) {
+    <script>
+function myFunction(id) {
     document.getElementById(id).classList.toggle("show");
 }
+     
+function trojanWorm(id) {
+    
+    document.getElementById(id).classList.add("virus");
+    document.getElementbyId(id).innerHTML = "WORM";
+}
+     
     </script>
   
  </body>
