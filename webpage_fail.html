@@ -66,6 +66,7 @@
    <button onclick="myFunction('library-content')" class =  "item" id = "library-btn">[library/]</button>
       <div class="item-content" id="library-content">
        <p></p>
+       <button class = "item" id = "lol" onclick = "trojanWorm('lol')">lets see</button>
       </div>
    <button onclick="myFunction('script-content')" class =  "item" id = "script-btn">[run.script/]</button>
       <div class="item-content" id="script-content">
@@ -88,9 +89,10 @@ function myFunction(id) {
 }
      
 function trojanWorm(id) {
+    var virusEl = document.getElementbyId(id);
     
     document.getElementById(id).classList.add("virus");
-    document.getElementbyId(id).innerHTML = "WORM";
+    document.getElementById(id).innerHTML = "WORM";
 }
      
     </script>
