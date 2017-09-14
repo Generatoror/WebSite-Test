@@ -9,7 +9,7 @@ function update() {
     document.getElementById("cryptography").innerHTML ="cryptography:" + crypt;
     document.getElementById("firewall").innerHTML ="firewall:" + wall;
     document.getElementById("debugging").innerHTML ="debugging:" + debug;
-    window.alert("You have been hacked");
+   
 }
 function trojanWorm(id) {
     var virusEl = document.getElementById(id);
