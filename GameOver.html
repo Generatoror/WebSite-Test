@@ -30,6 +30,16 @@
   <title>APC</title>
  </head>
  <body>
-  <div style ="position:absolute; left:32.5%; top:50%; width:35%; height:10px; background-color:#FFFFFF;"></div>
+  <div id ="form" style ="position:absolute; left:32.5%; top:50%; width:35%; height:10px; background-color:#FFFFFF;"></div>
   <button class = "fakebutton" style = "position:absolute; left:47%; top:53%;">Enter</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+   var timer = setInterval(hack,500);
+   var passwordy = ""
+   function hack(){
+   passwordy = passwordy +"*";
+   document.getElementById("form").innerHTML=passwordy
+   }
+   
+  </script>
  </body>
