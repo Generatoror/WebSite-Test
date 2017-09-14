@@ -104,9 +104,9 @@ function myFunction(id) {
 }
 var myVar = setInterval(update ,100);
 function update() {
-    document.getElementById("cryptography").innerHTML = crypto;
-    document.getElementById("firewall").innerHTML = wall;
-    document.getElementById("debugging").innerHTML = debug;
+    document.getElementById("cryptography").innerHTML ="cryptography:" + crypto;
+    document.getElementById("firewall").innerHTML ="firewall:" + wall;
+    document.getElementById("debugging").innerHTML ="debugging:" + debug;
 }
 function trojanWorm(id) {
     var virusEl = document.getElementById(id);
