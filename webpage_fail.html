@@ -75,19 +75,19 @@
       <div class="item-content" id="library-content">
        <p> |about the situation|:TEXT:</p>
        <p> As you might know, lately, the system has been going down, this way resulting in many :i:ratyn:i: trademark devices becoming obsolete, slow or just displaying weird messages.</p>
-       <p>Eventually rumors got shared about :i:ratyn:i: being hacked by a terrorist or as some call it, a "saivior", however, while it is true that someone TRIED to access the system, it is also true that he failed, the real reason the server was gone down was due to an update made to protect the system.</p>
+       <p>Eventually rumors got shared about :i:ratyn:i: being hacked by a terrorist or as some call it, a "saivior", however, while it is true that someone TRIED to access the system, it is also true that he failed, the real reason the server had gone down was due to an update made to protect the system.</p>
        <button class = "item" id = "lol" onclick = "trojanWorm('lol')">|The truth| kind:PERSONSONALONLY:</button>
       </div>
    <button onclick="myFunction('script-content')" class =  "item" id = "script-btn">[run.script/]</button>
       <div class="item-content" id="script-content">
        <p class= "item">If buttonA clicked  run |about the situation| parameters from |fine|</p>
-       <p>If buttonA clicked  run |how| parameters</p>
+       <p class= "item">If buttonB clicked  run |how| parameters from |universal|</p>
       </div>
   </div>
-  <div id = statBox>
-   <p id = cryptography>cryptography: value</p>
-   <p id = security>security: value</p>
-   <p id = debugging>debugging: value</p>
+  <div id = "statBox">
+   <p id = "cryptography">cryptography: value</p>
+   <p id = "firewall">firewall: value</p>
+   <p id = "debugging">debugging: value</p>
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   
@@ -95,16 +95,27 @@
     
 
     <script>
+var crypto = 10;
+var wall = 10;
+var debug = 10;
+
 function myFunction(id) {
     document.getElementById(id).classList.toggle("show");
 }
-     
+var myVar = setInterval(update ,100);
+function update() {
+    document.getElementById("cryptography").innerHTML = crypto;
+    document.getElementById("firewall").innerHTML = wall;
+    document.getElementById("debugging").innerHTML = debug;
+}
 function trojanWorm(id) {
     var virusEl = document.getElementById(id);
     
     document.getElementById(id).classList.add("virus");
     document.getElementById(id).classList.remove("item");
     document.getElementById(id).innerHTML = "WORM";
+    wall--;
+
 }
      
     </script>
