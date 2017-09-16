@@ -107,6 +107,9 @@ function update() {
     document.getElementById("cryptography").innerHTML ="cryptography:" + crypt;
     document.getElementById("firewall").innerHTML ="firewall:" + wall;
     document.getElementById("debugging").innerHTML ="debugging:" + debug;
+    if (crypt <=0 ||wall<=0||debug<=0){
+         window.location = "https://rawgit.com/Generatoror/WebSite-Test/master/GameOver.html";
+    }
     
 }
 function trojanWorm(id) {
