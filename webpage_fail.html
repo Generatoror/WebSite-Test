@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html id = "digital world">
  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
       body {
           background:RGB(100,100,130);
@@ -29,6 +32,7 @@
           overflow-y:auto;
           word-break: break-all;
       }
+      
       .item{
           background-color: RGB(0,10,5); 
           border: none;
@@ -56,6 +60,41 @@
           display:block;
        }
       .virus:hover{color: RGB(150,10,10)}
+      @media(min-width:766px){
+	hr {
+	  display:none;
+	}
+      }
+      @media(max-width: 765px){
+	hr {
+	  position:fixed;
+	  display:block;
+	  position:fixed;
+          width: 100%;
+          left:0%;
+          top:calc(40% - 8px);
+	  color:RGB(0,200,0);
+	}
+	#code {
+          position:fixed;
+          height:60%;
+          width: 100%;
+          left:0%;
+          top: 40%;
+          overflow-y:auto;
+          word-break: break-all;
+	}
+     	#statBox{
+          position:fixed;
+          height:40%;
+          width: 100%;
+          left:0%;
+          top: 0%;
+          overflow-y:auto;
+          word-break: break-all;
+	}
+	  
+      }
   </style>
   <meta charset="utf-8" />
   <title>DigitaL World</title>
@@ -63,66 +102,106 @@
  <body>
  
   <div id = "code">
-   <button onclick="myFunction('setup-content')" class =  "item" id = "setup-btn">[setup/]</button>
+   <button class =  "item nested-button" id = "setup-btn">[setup/]</button>
       <div class="item-content" id="setup-content">
        <p class = "item">Title: Do not be alarmed</p>
       <button  class =  "item" id = "format">Format</button>
       </div>
-   <button onclick="myFunction('engine-content')" class =  "item" id = "engine-btn">[engine/]</button>
+   <button class ="item nested-button" id = "engine-btn">[engine/]</button>
       <div class="item-content" id="engine-content">
+		<p> |about the situation|:TEXT:</p>
       </div>
-   <button onclick="myFunction('library-content')" class =  "item" id = "library-btn">[library/]</button>
+   <button class =  "item nested-button" id = "library-btn">[library/]</button>
       <div class="item-content" id="library-content">
        <p> |about the situation|:TEXT:</p>
        <p> As you might know, lately, the system has been going down, this way resulting in many :i:ratyn:i: trademark devices becoming obsolete, slow or just displaying weird messages.</p>
        <p>Eventually rumors got shared about :i:ratyn:i: being hacked by a terrorist or as some call it, a "savior", however, while it is true that someone TRIED to access the system, it is also true that he failed, the real reason the server had gone down was due to an update made to protect the system.</p>
-       <button class = "item" id = "lol" onclick = "trojanWorm('lol')">|The truth| kind:PERSONSONALONLY:</button>
+       <button class = "item trojWorm" id = "lol" >|The truth| kind:PERSONSONALONLY:</button>
       </div>
-   <button onclick="myFunction('script-content')" class =  "item" id = "script-btn">[run.script/]</button>
+   <button class =  "item nested-button" id = "script-btn">[run.script/]</button>
       <div class="item-content" id="script-content">
        <p class= "item">If buttonA clicked  run |about the situation| parameters from |fine|</p>
        <p class= "item">If buttonB clicked  run |how| parameters from |universal|</p>
       </div>
   </div>
+  <hr>
   <div id = "statBox">
-   <p id = "cryptography">cryptography: value</p>
-   <p id = "firewall">firewall: value</p>
-   <p id = "debugging">debugging: value</p>
+   <p id = "cryptography">cryptography: 10</p>
+   <p id = "firewall">firewall: 10</p>
+   <p id = "debugging">debugging: 10</p>
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   
     
     
 
-    <script>
+<script>
+
+
+var buttons = document.getElementsByClassName('nested-button');
+var viruses = document.getElementsByClassName('trojWorm')
+var content = document.getElementsByClassName('item-content')
+
 var crypt = 10;
 var wall = 10;
 var debug = 10;
-
 function myFunction(id) {
     document.getElementById(id).classList.toggle("show");
+	
 }
-var myVar = setInterval(update ,100);
+//var myVar = setInterval(update ,100);
 function update() {
     document.getElementById("cryptography").innerHTML ="cryptography:" + crypt;
     document.getElementById("firewall").innerHTML ="firewall:" + wall;
     document.getElementById("debugging").innerHTML ="debugging:" + debug;
     if (crypt <=0 ||wall<=0||debug<=0){
-         window.location = "https://rawgit.com/Generatoror/WebSite-Test/master/GameOver.html";
+         window.location = "GameOver.html";
     }
     
 }
 function trojanWorm(id) {
     var virusEl = document.getElementById(id);
     
-    document.getElementById(id).classList.add("virus");
-    document.getElementById(id).classList.remove("item");
-    document.getElementById(id).innerHTML = "WORM";
+    document.getElementById(id).classList.add('virus');
+    document.getElementById(id).classList.remove('item');
+    document.getElementById(id).innerHTML = 'WORM';
     wall--;
-
+    update();
+    
 }
-     
-    </script>
+var funcsBtn = [];
+/*function createfunc(i) {
+    return function() { myFunction(content[i].id) };
+}
+
+for (var i = 0; i < buttons.length; i++) {
+    funcsBtn[i] = createfunc(i);
+}*/
+
+for (var i = 0; i < buttons.length; i++) {
+  funcsBtn[i] = myFunction.bind(this, content[i].id);
+}
+
+for (var j = 0;j<buttons.length;j++){
+    buttons[j].addEventListener("click", funcsBtn[j],false);
+    
+}
+/*for (var o = 1;o<buttons.length;o++){
+	var currentCont =content[o].id;
+    buttons[o].addEventListener("click", function(){myFunction(content[o].id)},false);
+    
+}*/
+var funcsVir = [];
+for (var i = 0; i < viruses.length; i++) {
+  funcsVir[i] = trojanWorm.bind(this, viruses[i].id);
+}
+
+for (var j = 0;j<viruses.length;j++){
+    viruses[j].addEventListener("click", funcsVir[j],false);
+    
+}
+
+</script>
   
  </body>
 </html>
